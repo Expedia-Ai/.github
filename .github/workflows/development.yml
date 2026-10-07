@@ -1,0 +1,73 @@
+name: "Development"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: false
+        default: '24'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: development-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test application
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ inputs.node-version || '24' }}
+
+      - name: "🔧 install npm@latest"
+        run: npm i -g npm@latest
+
+      - name: "📦 install dependencies"
+        uses: bahmutov/npm-install@v1
+
+      - name: "🔍 run tests"
+        run: npm run test --if-present
+
+      - name: "📦 build"
+        run: npm run build --if-present
+
+  lint:
+    name: Code standards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ inputs.node-version || '24' }}
+
+      - name: "🔧 install npm@latest"
+        run: npm i -g npm@latest
+
+      - name: "📦 install dependencies"
+        uses: bahmutov/npm-install@v1
+
+      - name: "🔍 lint code"
+        run: npm run lint --if-present
+
+      - name: "🔍 type-check"
+        run: npm run typecheck --if-present
