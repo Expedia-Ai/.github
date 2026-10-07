@@ -26,16 +26,3 @@ jobs:
       - uses: amannn/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  welcome:
-    name: Welcome
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: semantics
-    if: github.event.action == 'opened'
-    steps:
-      - uses: actions/first-interaction@v3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          pr-message: |
-            Congrats on making your first Pull Request and thanks for taking the time to improve Expedia-Ai! ❤️🎉🍕
