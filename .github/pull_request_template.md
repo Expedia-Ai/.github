@@ -19,7 +19,6 @@ Linear: EAI-
 - [ ] test
 - [ ] build
 - [ ] ci
-- [ ] chore
 - [ ] revert
 
 > Title uses Conventional Commits. Append `!` for breaking changes (e.g. `feat!:`).

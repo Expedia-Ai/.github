@@ -59,7 +59,7 @@ npm run format
 6. Ensure the test suite passes.
 7. Make sure you address any lint warnings.
 8. If you make the existing code better, please let us know in your PR description.
-9. A PR description and title are required. The title is required to begin with: "feat:" or "fix:"
+9. A PR description and title are required. The title is required to begin with one of: "feat:", "fix:", "docs:", "style:", "refactor:", "perf:", "test:", "build:", "ci:" or "revert:" ("chore:" is reserved for automation)
 10. Link the Linear issue (`EAI-…`) in the PR description and end the PR title and your commit messages with its key. An issue is required to announce your intentions. PR's without a linked issue will be marked invalid and closed.
 
 ### PR Validation
