@@ -51,7 +51,7 @@ npm run format
 
 ### _We actively welcome your pull requests; each one links its Linear issue._
 
-1. Create your branch from `beta` in the repository (no forks). `beta` is the pull request target; `main` is production.
+1. Create your branch from `beta` or DEFAULT branch if different, in the repository (no forks). `beta` is the pull request target; `main` is production.
 2. Name your branch after the Linear issue, i.e. `eai-42-adds-new-thing`.
 3. If you've added code that should be tested, add tests.
 4. If you've changed APIs, update the documentation.
