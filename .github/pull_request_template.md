@@ -8,6 +8,10 @@ Linear: EAI-
 
 <!-- Every choice that differs from the spec, an owner answer or the reference, each with its question for the owners. None if there are none. -->
 
+## Self-review
+
+<!-- How the change was checked against the task, the spec and the reference repo, and what the one /code-review pass found and what was fixed. -->
+
 ## Type
 
 - [ ] feat
