@@ -38,6 +38,7 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: ${{ inputs.deno-version || '2.x' }}
+          cache: true
 
       - name: "📦 install dependencies"
         run: deno install
@@ -47,7 +48,7 @@ jobs:
         run: ${{ inputs.prepare }}
 
       - name: "🔍 run tests"
-        run: deno task test
+        run: deno task --if-present test
 
   lint:
     name: Code standards
@@ -61,6 +62,7 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: ${{ inputs.deno-version || '2.x' }}
+          cache: true
 
       - name: "📦 install dependencies"
         run: deno install
@@ -70,10 +72,10 @@ jobs:
         run: ${{ inputs.prepare }}
 
       - name: "🔍 lint code"
-        run: deno task lint
+        run: deno task --if-present lint
 
       - name: "🔍 check format"
-        run: deno task format
+        run: deno task --if-present format
 
       - name: "🔍 type-check"
-        run: deno task check
+        run: deno task --if-present check
