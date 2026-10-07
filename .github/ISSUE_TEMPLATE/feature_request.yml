@@ -1,0 +1,72 @@
+name: "🚀 Feature request"
+description: "Propose a change or new capability"
+title: "feat: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: "markdown"
+    attributes:
+      value: |
+        Thanks for scoping a feature request.
+  - type: "checkboxes"
+    id: "preflight"
+    attributes:
+      label: "Pre-flight checks"
+      options:
+        - label: "I searched existing issues and discussions for duplicates."
+          required: true
+        - label: "I agree to follow the project's Code of Conduct."
+          required: true
+  - type: "dropdown"
+    id: "type"
+    attributes:
+      multiple: false
+      label: "Type of change"
+      description: "Conventional Commits prefix this maps to."
+      options:
+        - "feat — new feature"
+        - "fix — bug fix"
+        - "docs — documentation"
+        - "style — formatting / no behavior change"
+        - "refactor — restructure / no behavior change"
+        - "perf — performance"
+        - "test — tests"
+        - "build — build system or dependencies"
+        - "ci — CI/CD configuration"
+        - "chore — maintenance"
+        - "revert — reverts a prior change"
+    validations:
+      required: true
+  - type: "textarea"
+    id: "problem"
+    attributes:
+      label: "Problem"
+      description: "What user problem or limitation does this address? Include the user story if useful."
+      placeholder: |
+        As a <persona>, I want <capability> so that <outcome>.
+    validations:
+      required: true
+  - type: "textarea"
+    id: "solution"
+    attributes:
+      label: "Proposed solution"
+      description: "What should the feature look like? API sketches, UI mocks, examples welcome."
+    validations:
+      required: true
+  - type: "textarea"
+    id: "alternatives"
+    attributes:
+      label: "Alternatives considered"
+      description: "What other approaches did you weigh and why were they rejected?"
+  - type: "textarea"
+    id: "acceptance"
+    attributes:
+      label: "Acceptance criteria"
+      description: "Bullet list of checkable conditions for done."
+      placeholder: |
+        - [ ] When X happens, Y is observed
+        - [ ] Documentation updated for Z
+  - type: "input"
+    id: "context"
+    attributes:
+      label: "Additional context"
+      description: "Links to RFCs, prior art, related issues."
