@@ -1,0 +1,79 @@
+name: "Development (Deno)"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  workflow_call:
+    inputs:
+      deno-version:
+        description: "Deno version passed to denoland/setup-deno"
+        type: string
+        default: '2.x'
+      prepare:
+        description: "Command run after deno install and before the checks, e.g. code generation"
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: development-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test application
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🔧 setup deno"
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: ${{ inputs.deno-version || '2.x' }}
+
+      - name: "📦 install dependencies"
+        run: deno install
+
+      - name: "⚙️ prepare"
+        if: inputs.prepare != ''
+        run: ${{ inputs.prepare }}
+
+      - name: "🔍 run tests"
+        run: deno task test
+
+  lint:
+    name: Code standards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🔧 setup deno"
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: ${{ inputs.deno-version || '2.x' }}
+
+      - name: "📦 install dependencies"
+        run: deno install
+
+      - name: "⚙️ prepare"
+        if: inputs.prepare != ''
+        run: ${{ inputs.prepare }}
+
+      - name: "🔍 lint code"
+        run: deno task lint
+
+      - name: "🔍 check format"
+        run: deno task format
+
+      - name: "🔍 type-check"
+        run: deno task check
