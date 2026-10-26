@@ -20,6 +20,8 @@ concurrency:
 jobs:
   semantics:
     name: Semantics
+    # A release PR (beta into main) is merged with a merge commit, so its title never becomes a commit and isn't checked.
+    if: ${{ !(github.event.pull_request.head.ref == 'beta' && github.event.pull_request.base.ref == 'main') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
