@@ -4,13 +4,17 @@
 
 Linear: EAI-
 
+## Choices
+
+<!-- Implementation choices the Linear issue and the owners' answers leave open: the option picked, or the variants built for the owners to pick. None if there are none. -->
+
 ## Deviations
 
-<!-- Every choice that differs from the spec, an owner answer or the reference, each with its question for the owners. None if there are none. -->
+<!-- A departure from the Linear issue, an owner answer or the reference that remains, each with its question for the owners. None if there are none. Not deviations: a check that wasn't run (Self-review), an implementation choice (Choices), work the issue still has. -->
 
 ## Self-review
 
-<!-- How the change was checked against the task, the spec and the reference repo, and what the one /code-review pass found and what was fixed. -->
+<!-- How the change was checked against the Linear issue and the reference repo, and what the one /code-review pass found and what was fixed. -->
 
 ## Type
 
