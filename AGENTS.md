@@ -11,7 +11,7 @@ Default guidance for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilo
 
 ## Conventions
 
-- Conventional Commits for commit messages and PR titles (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `revert:`; never `chore:`, which is reserved for automation), ending with the Linear issue key (e.g. `feat: add rate limiting (EAI-42)`). Append `!` for breaking changes. Commits and PRs written with an AI agent that a person supervises on their own machine carry no attribution trailer or line; an agent working unattended (on a schedule) or in a cloud session keeps its default attribution. The PR description's AI disclosure (below) still applies.
+- Conventional Commits for commit messages and PR titles (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `revert:`; never `chore:`, which is reserved for automation), ending with the Linear issue key (e.g. `feat: add rate limiting (EAI-42)`). Append `!` for breaking changes. Commits and PRs written with an AI agent that a person supervises on their own machine carry no attribution trailer or line; an agent working unattended (on a schedule) or in a cloud session keeps its default attribution.
 - Default branch: `beta`, the pull request target; `main` is production (this `.github` repository has only `main`). Branches are named after the Linear issue in kebab-case (e.g. `eai-42-add-rate-limiting`). One PR per Linear issue into `beta`; the owners squash-merge.
 - Agents never commit on, push to, or merge into `beta` or `main`, never force-push, and never use `--no-verify`.
 - `CHANGELOG.md` is generated from the release notes. Never write or edit it.
