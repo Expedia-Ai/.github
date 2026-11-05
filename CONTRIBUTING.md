@@ -6,10 +6,9 @@ Some thoughts to help you contribute to this project
 
 ## Recommended Communication Style
 
-1. Always leave screenshots for visuals changes
-2. Always leave a detailed description in the Pull Request. Leave nothing ambiguous for the reviewer.
-3. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
-4. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
+1. Keep the Pull Request description short: a few plain sentences on what it does, then its choices and deviations, if there are any. No screenshots.
+2. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
+3. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
 ## Setup
 
@@ -55,12 +54,10 @@ npm run format
 2. Name your branch after the Linear issue, i.e. `eai-42-adds-new-thing`.
 3. If you've added code that should be tested, add tests.
 4. If you've changed APIs, update the documentation.
-5. If you make visual changes, screenshots are welcome.
-6. Ensure the test suite passes.
-7. Make sure you address any lint warnings.
-8. If you make the existing code better, please let us know in your PR description.
-9. A PR description and title are required. The title is required to begin with one of: "feat:", "fix:", "docs:", "style:", "refactor:", "perf:", "test:", "build:", "ci:" or "revert:" ("chore:" is reserved for automation)
-10. Link the Linear issue (`EAI-…`) in the PR description and end the PR title and your commit messages with its key. An issue is required to announce your intentions. PR's without a linked issue will be marked invalid and closed.
+5. Ensure the test suite passes.
+6. Make sure you address any lint warnings.
+7. A PR description and title are required. The title is required to begin with one of: "feat:", "fix:", "docs:", "style:", "refactor:", "perf:", "test:", "build:", "ci:" or "revert:" ("chore:" is reserved for automation)
+8. Link the Linear issue (`EAI-…`) in the PR description and end the PR title and your commit messages with its key. An issue is required to announce your intentions. PR's without a linked issue will be marked invalid and closed.
 
 ### PR Validation
 
