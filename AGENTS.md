@@ -19,7 +19,7 @@ Default guidance for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilo
 
 ## AI-authored code
 
-- Disclose AI-generated code in the PR description (the pull request template has a dedicated section).
+- The PR description is a few plain, non-technical sentences on what the PR does, then Choices and Deviations only when there are real ones (the pull request template): no screenshots, checklists, test reports or anything unrelated to the PR's change.
 - Ask before building when a change would depart from the Linear issue, an owner answer or the reference repo; the answer is the instruction. A departure that remains is listed under Deviations in the PR description, with its question for the owners, and is never kept in a log file. A check that wasn't run, an implementation choice (listed under Choices) or work the issue still has is not a deviation. Agent proposals are never recorded as owner approvals.
 - Treat AI output as a draft: verify behavior, edge cases, and security implications before requesting review.
 - Do not paste secrets, customer data, or proprietary IP into third-party AI services.
