@@ -20,7 +20,7 @@ Default guidance for AI coding agents (Claude Code, Codex, Cursor, GitHub Copilo
 ## AI-authored code
 
 - Disclose AI-generated code in the PR description (the pull request template has a dedicated section).
-- List every choice that differs from the spec, an owner answer, or the reference repo under Deviations in the PR description, with its question for the owners. Agent proposals are never recorded as owner approvals.
+- Ask before building when a change would depart from the Linear issue, an owner answer or the reference repo; the answer is the instruction. A departure that remains is listed under Deviations in the PR description, with its question for the owners, and is never kept in a log file. A check that wasn't run, an implementation choice (listed under Choices) or work the issue still has is not a deviation. Agent proposals are never recorded as owner approvals.
 - Treat AI output as a draft: verify behavior, edge cases, and security implications before requesting review.
 - Do not paste secrets, customer data, or proprietary IP into third-party AI services.
 - Cite sources when an AI tool surfaces them; flag uncertain attribution rather than hide it.
@@ -33,7 +33,7 @@ A change is ready to merge when:
 - All required CI checks pass.
 - Tests cover the new or changed behavior, in repos that have a test suite.
 - Documentation is updated where the change is user-visible.
-- The author self-reviewed it against the spec and the reference repo and ran one `/code-review` pass, fixing real findings.
+- The author self-reviewed it against the Linear issue and the reference repo and ran one `/code-review` pass, fixing real findings.
 - A human reviewer has approved.
 
 ## Out of scope without explicit approval
@@ -42,4 +42,4 @@ A change is ready to merge when:
 - Major version bumps of runtime, framework, or database.
 - Editing `.github/workflows/*` or branch protection rules.
 - Releases, package publishes, or infrastructure changes.
-- Packages, tools, services, or patterns that the spec and the reference repos do not use.
+- Packages, tools, services, or patterns that the Linear issue and the reference repos do not use.
